@@ -224,8 +224,8 @@ def main():
 
     with open("model_edge_dual.h", "w") as f:
         f.write("#pragma once\n#include <stdint.h>\n")
-        export_rf_model(rf_cold, scaler_cold, "RF_COLD", "model_edge_dual.h")
-        export_rf_model(rf_warm, scaler_warm, "RF_WARM", "model_edge_dual.h")
+    export_rf_model(rf_cold, scaler_cold, "RF_COLD", "model_edge_dual.h")
+    export_rf_model(rf_warm, scaler_warm, "RF_WARM", "model_edge_dual.h")
 
     print("Done. Copy 'rfe_settings.h' and 'model_edge_dual.h' to your ESP32/src folder.")
 
