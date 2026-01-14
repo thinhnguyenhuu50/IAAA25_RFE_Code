@@ -1,0 +1,9 @@
+#pragma once
+#include <stdint.h>
+#define SVM_N_FEATURES 12
+static const float SVM_SCALE_MEAN[] = { 39.651942, 40.747360, -1.095418, 21.984636, 17.667306, 61.788168, -22.161624, -0.090752, -0.107015, -0.020891, 0.078363, 0.056352 };
+static const float SVM_SCALE_STD[]  = { 22.750149, 25.360734, 43.266970, 6.570267, 24.979768, 24.680612, 28.259886, 4.328356, 4.405289, 1.040527, 4.596124, 0.120795 };
+static const float SVM_COEF[] = { 0.194259, 1.749908, -0.923557, -0.329300, 0.263533, -0.225791, 0.666160, -0.145104, -0.170097, 0.118290, 0.009448, -0.082032 };
+static const float SVM_BIAS = 0.136496;
+static const float SVM_PROB_A = -1.213483;
+static const float SVM_PROB_B = 0.164611;

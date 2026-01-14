@@ -1,0 +1,14 @@
+#pragma once
+
+#define IDX_TEMPERATURE 0
+#define IDX_HUMIDITY 1
+#define IDX_TEMPERATURE_WEATHERSTATION 2
+#define IDX_HUMIDITY_WEATHERSTATION 3
+#define NUM_RAW_INPUTS 4
+#define IDX_MAIN_COL 0
+#define NUM_PAIRS 0
+
+static const int CORR_PAIRS[NUM_PAIRS > 0 ? NUM_PAIRS : 1][2] = {
+};
+
+#define TS_N_FEATURES 12
