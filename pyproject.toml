@@ -16,6 +16,7 @@ dependencies = [
     "numpy>=2.3.5",
     "openpyxl>=3.1.5",
     "optuna>=4.6.0",
+    "paho-mqtt>=2.1.0",
     "pandas>=2.3.3",
     "pexpect>=4.9.0",
     "pyts>=0.13.0",
