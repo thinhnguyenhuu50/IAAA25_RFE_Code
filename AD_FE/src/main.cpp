@@ -157,7 +157,7 @@ void wifiConnect() {
 void mqttConnect() {
   client.setServer(MQTT_HOST, MQTT_PORT);
   while (!client.connected()) {
-    if (client.connect("esp32_catch22_svm", MQTT_USER, MQTT_PASSWD)) {
+    if (client.connect("esp32_catch22_rf", MQTT_USER, MQTT_PASSWD)) {
         client.subscribe(MQTT_TOPIC_DATA);
         // READY signal
         client.publish(MQTT_TOPIC_OUT, "{\"status\": \"READY\"}");
@@ -196,7 +196,7 @@ void onMqtt(char *topic, byte *payload, unsigned int length) {
     
     float score = 0;
     unsigned long t1 = micros();
-    int label = predict_svm(features, &score); 
+    int label = predict_rf(features, &score); 
     float t_infer = (micros() - t1) / 1000.0f;
 
     String msg = timeStr + ",";
