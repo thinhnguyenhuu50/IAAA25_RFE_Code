@@ -16,8 +16,8 @@ const char *MQTT_HOST = "mqtt.abcsolutions.com.vn";
 const int MQTT_PORT = 1883;
 const char *MQTT_USER = "abcsolution";
 const char *MQTT_PASSWD = "CseLAbC5c6";
-const char *MQTT_TOPIC_DATA = "duy/sensorFault";
-const char *MQTT_TOPIC_OUT = "duy/sensorDetection";
+const char *MQTT_TOPIC_DATA = "duy/sensorFault1";
+const char *MQTT_TOPIC_OUT = "duy/sensorDetection1";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
