@@ -16,8 +16,8 @@ const char *MQTT_HOST = "mqtt.abcsolutions.com.vn";
 const int MQTT_PORT = 1883;
 const char *MQTT_USER = "abcsolution";
 const char *MQTT_PASSWD = "CseLAbC5c6";
-const char *MQTT_TOPIC_DATA = "duy/sensorFault1";
-const char *MQTT_TOPIC_OUT = "duy/sensorDetection1";
+const char *MQTT_TOPIC_DATA = "duy/sensorFault";
+const char *MQTT_TOPIC_OUT = "duy/sensorDetection";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -157,7 +157,7 @@ void wifiConnect() {
 void mqttConnect() {
   client.setServer(MQTT_HOST, MQTT_PORT);
   while (!client.connected()) {
-    if (client.connect("esp32_catch22_rf", MQTT_USER, MQTT_PASSWD)) {
+    if (client.connect("esp32_catch22_lr", MQTT_USER, MQTT_PASSWD)) {
         client.subscribe(MQTT_TOPIC_DATA);
         // READY signal
         client.publish(MQTT_TOPIC_OUT, "{\"status\": \"READY\"}");
@@ -196,9 +196,10 @@ void onMqtt(char *topic, byte *payload, unsigned int length) {
     
     float score = 0;
     unsigned long t1 = micros();
-    int label = predict_rf(features, &score); 
+    int label = predict_lr(features, &score); 
     float t_infer = (micros() - t1) / 1000.0f;
 
+    // Strict CSV Format
     String msg = timeStr + ",";
     msg += String(raw[IDX_TEMPERATURE],2)+","+String(raw[IDX_HUMIDITY],2)+","+
            String(raw[IDX_HUMIDITY_WEATHERSTATION],2)+","+String(raw[IDX_TEMPERATURE_WEATHERSTATION],2)+",";
