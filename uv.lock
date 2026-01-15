@@ -373,6 +373,7 @@ dependencies = [
     { name = "paho-mqtt" },
     { name = "pandas" },
     { name = "pexpect" },
+    { name = "pycatch22" },
     { name = "pyts" },
     { name = "saxpy" },
     { name = "scikit-learn" },
@@ -401,6 +402,7 @@ requires-dist = [
     { name = "paho-mqtt", specifier = ">=2.1.0" },
     { name = "pandas", specifier = ">=2.3.3" },
     { name = "pexpect", specifier = ">=4.9.0" },
+    { name = "pycatch22", specifier = ">=0.4.5" },
     { name = "pyts", specifier = ">=0.13.0" },
     { name = "saxpy", specifier = ">=1.0.1.dev167" },
     { name = "scikit-learn", specifier = ">=1.8.0" },
@@ -947,6 +949,12 @@ sdist = { url = "https://files.pythonhosted.org/packages/20/e5/16ff212c1e452235a
 wheels = [
     { url = "https://files.pythonhosted.org/packages/22/a6/858897256d0deac81a172289110f31629fc4cee19b6f01283303e18c8db3/ptyprocess-0.7.0-py2.py3-none-any.whl", hash = "sha256:4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35", size = 13993, upload-time = "2020-12-28T15:15:28.35Z" },
 ]
+
+[[package]]
+name = "pycatch22"
+version = "0.4.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/84/9c/452f83ae4d0e1f0fc36317b6b15c7a07214a1cc7205e19b35d77253c6cad/pycatch22-0.4.5.tar.gz", hash = "sha256:7ec844c659f22bedc66847ac866ef2bd86ffbbd4d8114b5e97f699f20a6f9f81", size = 50311, upload-time = "2024-05-14T05:02:37.228Z" }
 
 [[package]]
 name = "pygments"

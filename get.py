@@ -2,12 +2,13 @@
 import argparse
 from pathlib import Path
 import paho.mqtt.client as mqtt
+import uuid
 
 DEFAULT_HOST = "mqtt.abcsolutions.com.vn"
 DEFAULT_PORT = 1883
 DEFAULT_USER = "abcsolution"
 DEFAULT_PASS = "CseLAbC5c6"
-DEFAULT_TOPIC = "duy/sensorDetection"
+DEFAULT_TOPIC = "duy/sensorDetection1"
 DEFAULT_OUT = "output/detections.csv"
 
 CSV_HEADERS = [
@@ -52,8 +53,9 @@ def on_message(client, userdata, msg):
         print(f"[ERR] Cannot write to {out_path}: {e}")
 
 def build_client(args, out_path: Path):
-    # Dùng API v2; nếu môi trường gọi theo v1, callback vẫn ổn vì on_disconnect có 'flags'
-    client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="det_subscriber")
+    # Use unique client ID to prevent conflicts
+    unique_id = f"det_subscriber_{uuid.uuid4().hex[:8]}"
+    client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id=unique_id)
     client.username_pw_set(args.username, args.password)
     client.user_data_set({
         "host": args.host,

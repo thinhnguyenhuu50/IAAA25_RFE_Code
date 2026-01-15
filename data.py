@@ -16,7 +16,7 @@ MQTT_HOST = "mqtt.abcsolutions.com.vn"
 MQTT_PORT = 1883
 MQTT_USERNAME = "abcsolution"
 MQTT_PASSWORD = "CseLAbC5c6"
-MQTT_TOPIC_PUB = "duy/sensorFault"
+MQTT_TOPIC_PUB = "duy/sensorFault1"
 
 # =========================
 # CSV CONFIG
